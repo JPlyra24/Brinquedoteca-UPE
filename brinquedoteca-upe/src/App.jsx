@@ -26,7 +26,6 @@ const App = () => {
         <Route path="/editKidprofile" element={<EditKidProfile/>} />
         <Route path="/Kidprofile" element={<KidProfile/>} />
         <Route path="/homemonitor" element={<HomeMonitor/>} />
-        <Route path="/kidprofile" element={<KidProfile/>} />
         <Route path="/editmonitorprofile" element={<EditMonitorProfile/>} />
       </Routes>
     </Router>

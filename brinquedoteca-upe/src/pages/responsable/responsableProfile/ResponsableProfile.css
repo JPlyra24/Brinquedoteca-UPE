@@ -1,0 +1,55 @@
+.profile-form-container {
+ max-width: 400px;
+ margin: auto;
+ padding: 20px;
+ border: 1px solid #ddd;
+ border-radius: 5px;
+}
+
+h2 {
+ color: red;
+ text-align: center;
+}
+
+.form-group {
+ margin-bottom: 15px;
+}
+
+.form-group label {
+ display: block;
+ margin-bottom: 5px;
+}
+
+.form-group input {
+ width: calc(100% - 20px);
+ padding: 8px 10px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+}
+
+button {
+ display: block;
+ width: 100%;
+ padding: 10px;
+ background-color: #00008b;
+ color: #fff;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+}
+
+button:hover {
+ background-color: #0056b3;
+}
+
+a {
+ display: block;
+ text-align: center;
+ margin-top: 10px;
+ color: #00008b;
+ text-decoration: none;
+}
+
+a:hover {
+ text-decoration: underline;
+}

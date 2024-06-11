@@ -18,7 +18,6 @@ const Login = () => {
     );
 
     if (status === 200) {
-      // Sucesso no login, faça a navegação ou armazenamento do token
       console.log('Login successful', result);
     } else {
       setError(errors || 'Erro no login');

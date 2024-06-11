@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import HomeResponsable from './pages/responsable/HomeResponsable/HomeResponsable';
-import RegisterKid from './pages/responsable/RegisterKid';
+import RegisterKid from './pages/responsable/RegisterKid/RegisterKid';
 import SchedulingKid from './pages/responsable/SchedulingKid';
 import EditRespProfile from './pages/responsable/EditRespProfile/EditRespProfile';
 import EditKidProfile from './pages/responsable/EditKidProfile/EditKidProfile';

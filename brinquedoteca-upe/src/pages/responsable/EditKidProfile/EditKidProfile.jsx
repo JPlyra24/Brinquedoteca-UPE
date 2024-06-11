@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './KidProfile.css'; 
+import './EditKidProfile.css'; 
 
-const KiddProfile = () => {
+const EditKidProfile = () => {
   const [formData, setFormData] = useState({
     nomeCompleto: '',
     dataNascimento: '',
@@ -84,4 +84,4 @@ const KiddProfile = () => {
   );
 };
 
-export default KiddProfile;
+export default EditKidProfile;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './ResponsableProfile.css';
+import './EditRespProfile.css'
 
-const ResponsableProfileForm = () => {
+const EditRespProfile = () => {
   const [formData, setFormData] = useState({
     nome: '',
     cep: '',
@@ -149,4 +149,4 @@ const ResponsableProfileForm = () => {
   );
 };
 
-export default ResponsableProfileForm;
+export default EditRespProfile;

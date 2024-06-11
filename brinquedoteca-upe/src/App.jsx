@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import HomeResponsable from './pages/responsable/HomeResponsable';
+import HomeResponsable from './pages/responsable/HomeResponsable/HomeResponsable';
 import RegisterKid from './pages/responsable/RegisterKid';
 import SchedulingKid from './pages/responsable/SchedulingKid';
 import EditRespProfile from './pages/responsable/EditRespProfile/EditRespProfile';

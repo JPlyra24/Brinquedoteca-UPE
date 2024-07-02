@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './EditRespProfile.css'
+import TextInput from '../../../components/TextInput';
+import TopBar from '../../../components/TopBar';
+import "@fontsource/montserrat";
+import "@fontsource/montserrat/800.css";
+import { FaPen } from "react-icons/fa";
 
 const EditRespProfile = () => {
   const [formData, setFormData] = useState({
@@ -48,102 +53,117 @@ const EditRespProfile = () => {
 
   return (
     <div className="profile-form-container">
-      <h2>Perfil do Responsável</h2>
+      <TopBar/>
+      <div className='resp-prof'>
+        <h2 className='title-resp-prof'>Perfil do Responsável</h2>
+        <FaPen className='icon-resp-prof'/>
+      </div>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Nome completo:</label>
-          <input
-            type="text"
-            name="nome"
-            value={formData.nome}
-            onChange={handleChange}
-            placeholder="Fulano da Silva"
-          />
+        <div className='form-resp-prof'>
+          <div>
+            <div className="form-group">
+              <p className='label-resp-prof'>Nome completo:</p>
+              <TextInput
+                type="text"
+                name="nome"
+                value={formData.nome}
+                onChange={handleChange}
+                placeholder="Fulano da Silva"
+              />
+            </div>
+            <div className="form-group">
+              <p className='label-resp-prof'>CEP:</p>
+              <TextInput
+                type="text"
+                name="cep"
+                value={formData.cep}
+                onChange={handleChange}
+                placeholder="XXXXX-XXX"
+                
+              />
+            </div>
+            <div className="form-group">
+              <p className='label-resp-prof'>Rua:</p>
+              <TextInput
+                type="text"
+                name="rua"
+                value={formData.rua}
+                onChange={handleChange}
+                placeholder="Rua dos Tal"
+              />
+            </div>
+            <div className='div-bairro-resp'>
+              <div className="form-group">
+                <p className='label-resp-prof'>Número:</p>
+                <TextInput
+                  type="text"
+                  name="numero"
+                  value={formData.numero}
+                  onChange={handleChange}
+                  placeholder="13"
+                />
+              </div>
+              <div className="form-group">
+                <p className='label-resp-prof'>Bairro:</p>
+                <TextInput
+                  type="text"
+                  name="bairro"
+                  value={formData.bairro}
+                  onChange={handleChange}
+                  placeholder="Santos"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="form-group">
+              <p className='label-resp-prof'>E-mail:</p>
+              <TextInput
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="email@gmail.com"
+              />
+            </div>
+            <div className="form-group">
+              <p className='label-resp-prof'>Telefone para contato:</p>
+              <TextInput
+                type="text"
+                name="telefone"
+                value={formData.telefone}
+                onChange={handleChange}
+                placeholder="(XX) XXXXX-XXXX"
+              />
+            </div>
+            <div className="form-group">
+              <p className='label-resp-prof'>CPF:</p>
+              <TextInput
+                type="text"
+                name="cpf"
+                value={formData.cpf}
+                onChange={handleChange}
+                placeholder="XXX.XXX.XXX-XX"
+              />
+            </div>
+            <div className="form-group">
+              <p className='label-resp-prof'>Senha:</p>
+              <TextInput
+                type="password"
+                name="senha"
+                value={formData.senha}
+                onChange={handleChange}
+                placeholder="******"
+              />
+            </div>
+          </div>
         </div>
-        <div className="form-group">
-          <label>CEP:</label>
-          <input
-            type="text"
-            name="cep"
-            value={formData.cep}
-            onChange={handleChange}
-            placeholder="XXXXX-XXX"
-          />
-        </div>
-        <div className="form-group">
-          <label>Rua:</label>
-          <input
-            type="text"
-            name="rua"
-            value={formData.rua}
-            onChange={handleChange}
-            placeholder="Rua dos Tal"
-          />
-        </div>
-        <div className="form-group">
-          <label>Número:</label>
-          <input
-            type="text"
-            name="numero"
-            value={formData.numero}
-            onChange={handleChange}
-            placeholder="13"
-          />
-        </div>
-        <div className="form-group">
-          <label>Bairro:</label>
-          <input
-            type="text"
-            name="bairro"
-            value={formData.bairro}
-            onChange={handleChange}
-            placeholder="Santos"
-          />
-        </div>
-        <div className="form-group">
-          <label>E-mail:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="email@gmail.com"
-          />
-        </div>
-        <div className="form-group">
-          <label>Telefone para contato:</label>
-          <input
-            type="text"
-            name="telefone"
-            value={formData.telefone}
-            onChange={handleChange}
-            placeholder="(XX) XXXXX-XXXX"
-          />
-        </div>
-        <div className="form-group">
-          <label>CPF:</label>
-          <input
-            type="text"
-            name="cpf"
-            value={formData.cpf}
-            onChange={handleChange}
-            placeholder="XXX.XXX.XXX-XX"
-          />
-        </div>
-        <div className="form-group">
-          <label>Senha:</label>
-          <input
-            type="password"
-            name="senha"
-            value={formData.senha}
-            onChange={handleChange}
-            placeholder="******"
-          />
+      </form>
+      <div className='end-resp-prof'>
+        <div className="back-link">
+          <a href="/">Voltar para Home?</a>
         </div>
         <button type="submit">Salvar</button>
-      </form>
-      <div className="back-link">
-        <a href="/">Voltar para Home?</a>
       </div>
     </div>
   );

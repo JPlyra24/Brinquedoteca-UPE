@@ -1,0 +1,39 @@
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  height: 30px;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 100%; /* Assegura que a altura da imagem seja igual à altura da barra */
+  max-height: 50px; /* Define uma altura máxima para as imagens */
+  max-width: 50px;
+  margin-right: 20px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  max-width: 80px;
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+  margin-left: 20px;
+  cursor: pointer;
+  color: #090E66;
+}
+
+.icon:hover {
+  color: #005bb5;
+}

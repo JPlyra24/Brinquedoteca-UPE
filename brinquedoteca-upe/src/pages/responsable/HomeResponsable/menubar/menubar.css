@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    justify-content: baseline; /* Ajuste conforme necessário */
+    gap: 5px; /* Espaçamento entre os itens */
+    background-color: aliceblue;
+  }
+  .item {
+    padding: 20px;
+  }

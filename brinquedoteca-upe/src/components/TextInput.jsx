@@ -1,16 +1,9 @@
 import React from 'react';
-import './TextInput.css';
+import '../pages/Login.css'
 
-const TextInput = ({ type, placeholder, value, onChange, name }) => {
+const TextInput = ({ type, placeholder }) => {
   return (
-    <input
-      className="text-input"
-      type={type}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      name={name}
-    />
+    <input className="login-input" type={type} placeholder={placeholder} />
   );
 };
 

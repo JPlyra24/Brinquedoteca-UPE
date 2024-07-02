@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './Login.css';
-import LoginInput from '../components/LoginInput';
 import brinquedotecaLogo from '../assets/Brinquedoteca.png';
 import upeLogo from '../assets/Logoupe.png';
 import { request } from '../services/api';
 import "@fontsource/montserrat";
 import "@fontsource/montserrat/800.css";
 import { Link } from 'react-router-dom';
+import TextInput from '../components/TextInput';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -40,14 +40,14 @@ const Login = () => {
         {error && <p className="error-text">{error}</p>}
         <div className='input-container'>
           <p className='login-title'>E-mail:</p>
-          <LoginInput
+          <TextInput
             type="email"
             placeholder="Digite seu e-mail..."
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
           <p className='login-title'>Senha:</p>
-          <LoginInput
+          <TextInput
             type="password"
             placeholder="Digite sua senha..."
             value={password}

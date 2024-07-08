@@ -51,121 +51,112 @@ const Register = () => {
   };
 
   return (
-    <div className="signup-container">
-      <div className="signup-header">
-        <img src={brinquedotecaLogo} alt="Brinquedoteca" className="logo-register" />
+    <div className="t2-signup-container">
+      <div className="t2-signup-header">
+        <img src={brinquedotecaLogo} alt="Brinquedoteca" className="t2-logo-register" />
       </div>
-      <div className="signup-form">
-        <div className='title-register'>
+      <div className="t2-signup-form">
+        <div className='t2-title-register'>
           <h2>Cadastro</h2>
-          <img src={upeLogo} alt="UPE" className="upe-logo" />
+          <img src={upeLogo} alt="UPE" className="t2-upe-logo" />
         </div>
-        {error && <p className="error-text">{error}</p>}
-        <div className='register-input-container'>
-          <p className='register-title'>Nome Completo:</p>
+        {error && <p className="t2-error-text">{error}</p>}
+        <div className='t2-register-input-container'>
+          <p className='t2-register-title'>Nome Completo:</p>
           <TextInput
             type="text"
             placeholder="Digite seu nome completo..."
             name="nomeCompleto"
             value={formData.nomeCompleto}
             onChange={handleChange}
-            className="text-input"
           />
-          <p className='register-title'>CEP:</p>
+          <p className='t2-register-title'>CEP:</p>
           <TextInput
             type="text"
             placeholder="Digite seu CEP..."
             name="cep"
             value={formData.cep}
             onChange={handleChange}
-            className="text-input"
           />
-          <p className='register-title'>Rua:</p>
+          <p className='t2-register-title'>Rua:</p>
           <TextInput
             type="text"
             placeholder="Digite sua rua..."
             name="rua"
             value={formData.rua}
             onChange={handleChange}
-            className="text-input"
           />
-          <div className='div-bairro'>
-            <div className='div-numero'>
-              <p className='register-title'>Número:</p>
+          <div className='t2-div-bairro'>
+            <div className='t2-div-numero'>
+              <p className='t2-register-title'>Número:</p>
               <TextInput
                 type="text"
                 placeholder="Nº"
                 name="numero"
                 value={formData.numero}
                 onChange={handleChange}
-                className="text-input"
               />
             </div>
-            <div className='nome-bairro'>
-              <p className='register-title'>Bairro:</p>
+            <div className='t2-nome-bairro'>
+              <p className='t2-register-title'>Bairro:</p>
               <TextInput
                 type="text"
                 placeholder="Digite seu bairro..."
                 name="bairro"
                 value={formData.bairro}
                 onChange={handleChange}
-                className="text-input"
               />
             </div>
           </div>
-          <p className='register-title'>E-mail:</p>
+          <p className='t2-register-title'>E-mail:</p>
           <TextInput
             type="email"
             placeholder="Digite seu e-mail..."
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="text-input"
           />
-          <p className='register-title'>Telefone Para Contato:</p>
+          <p className='t2-register-title'>Telefone Para Contato:</p>
           <TextInput
             type="text"
             placeholder="Digite seu telefone..."
             name="telefone"
             value={formData.telefone}
             onChange={handleChange}
-            className="text-input"
+            className="t2-text-input"
           />
-          <p className='register-title'>CPF:</p>
+          <p className='t2-register-title'>CPF:</p>
           <TextInput
             type="text"
             placeholder="Digite seu CPF..."
             name="cpf"
             value={formData.cpf}
             onChange={handleChange}
-            className="text-input"
           />
-          <p className='register-title'>Senha:</p>
+          <p className='t2-register-title'>Senha:</p>
           <TextInput
             type="password"
             placeholder="Digite sua senha..."
             name="senha"
             value={formData.senha}
             onChange={handleChange}
-            className="text-input"
           />
-          <p className='register-title'>Confirmar Senha:</p>
+          <p className='t2-register-title'>Confirmar Senha:</p>
           <TextInput
             type="password"
             placeholder="Confirme sua senha..."
             name="confirmarSenha"
             value={formData.confirmarSenha}
             onChange={handleChange}
-            className="text-input"
           />
         </div>
-        <div className='center'>
-          <div className='signup-container-horizontal'>
-            <p className="signup-text">
+        <div className='t2-center'>
+          <div className='t2-signup-container-horizontal'>
+            <p className="t2-signup-text">
               Voltar para o login? <a href="/">Voltar</a>
             </p>
             <Link to="/">
-              <button className="signup-button" onClick={handleSignup}>Cadastrar</button>
+              <button className="t2-signup-button" onClick={handleSignup}>Cadastrar</button>
             </Link>
           </div>
         </div>

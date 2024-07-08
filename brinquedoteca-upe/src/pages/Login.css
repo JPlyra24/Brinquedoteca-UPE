@@ -1,4 +1,12 @@
-.login-container {
+/*tela login = t1*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.t1-login-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,22 +15,22 @@
     font-family: "Montserrat";
 }
 
-.logo-header {
+.t1-logo-header {
     display: flex;
     justify-content: center;
 }
 
-.login-header {
+.t1-login-header {
     height: 90%;
     width: 70%;
 }
 
-.upe-logo {
+.t1-upe-logo {
     width: 100px;
     margin-bottom: 20px;
 }
 
-.title {
+.t1-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +38,7 @@
     font-size: 23px;
 }
 
-.login-form {
+.t1-login-form {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -41,23 +49,23 @@
     box-sizing: border-box;
 }
 
-.input-container {
+.t1-input-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.login-form h2 {
+.t1-login-form h2 {
     margin-bottom: 20px;
     color: #090E66;
 }
 
-.login-title {
+.t1-login-title {
     padding-top: 10px;
     margin-bottom: 5px;
 }
 
-.login-input {
+.t1-login-input {
     width: 100%;
     padding: 10px;
     background-color: #F4F3FF;
@@ -66,7 +74,7 @@
     box-sizing: border-box;
 }
 
-.login-button {
+.t1-login-button {
     width: 100%;
     padding: 15px 20px 15px 20px;
     background-color: #090E66;
@@ -74,67 +82,67 @@
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    margin-bottom: 10px;
 }
 
-.login-button:hover {
+.t1-login-button:hover {
     background-color: #005bb5;
 }
 
-.signup-container {
+.t1-signup-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
 }
 
-.signup-link {
+.t1-signup-link {
     color: #0066cc;
     text-decoration: none;
     margin-top: 5px;
 }
 
-.signup-link:hover {
+.t1-signup-link:hover {
     text-decoration: underline;
 }
 
-.center {
+.t1-signup-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.t1-center {
   display: grid;
 	align-items: center;
   padding-top: 20px;
 }
 
-.signup-container-horizontal {
+.t1-signup-container-horizontal {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-.signup-container-horizontal .signup-text {
+.t1-signup-container-horizontal .signup-text {
     margin-right: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.signup-container-horizontal .login-button {
-  width: auto;
-  flex-shrink: 0;
-}
-
 /* Media Queries for Responsiveness */
 @media (min-width: 768px) {
-    .login-container {
+    .t1-login-container {
         flex-direction: row;
         align-items: center;
     }
 
-    .logo-header {
+    .t1-logo-header {
         width: 50%;
     }
 
-    .login-form {
+    .t1-login-form {
         width: 50%;
         text-align: left;
         padding: 40px;

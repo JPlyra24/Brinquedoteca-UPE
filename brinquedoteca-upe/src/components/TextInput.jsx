@@ -3,7 +3,7 @@ import '../pages/Login.css'
 
 const TextInput = ({ type, placeholder }) => {
   return (
-    <input className="login-input" type={type} placeholder={placeholder} />
+    <input className="t1-login-input" type={type} placeholder={placeholder} />
   );
 };
 

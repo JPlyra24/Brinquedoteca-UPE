@@ -1,19 +1,22 @@
 import React from 'react';
-import MenuBar from './menubar/MenuBar';
-import './css.css'
-import BookChild from './showChild/BookChild';
-import ShowBooked from './showChild/ShowBooked';
+import './HomeResponsable.css'
+import TopBar from '../../../components/TopBar';
+import YourKids from '../../../components/YourKids';
+import YourAppointments from '../../../components/YourAppointments';
+
 
 const HomeResponsable = () => {
   return (
-    <div>
-      <MenuBar/>
-      <div className='containerNovo'>
-        <h1>Sua(s) criança(s):</h1>
-        <button className='item'><h1>+</h1></button>
+    <div className='t3-container'>
+      <TopBar/>
+      <div className='t3-body'>
+        <div className='t3-side-1'>
+          <YourKids/>
+        </div>
+        <div className='t3-side-2'> 
+          <YourAppointments/>
+        </div>
       </div>
-      <BookChild/>
-      <ShowBooked/>
     </div>
   );
 };

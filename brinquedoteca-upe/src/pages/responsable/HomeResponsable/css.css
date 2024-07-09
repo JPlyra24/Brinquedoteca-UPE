@@ -1,8 +1,0 @@
-.containerNovo {
-    display: flex;
-    justify-content: space-between; /* Ajuste conforme necessário */
-    gap: 100px; /* Espaçamento entre os itens */
-  }
-  .item {
-    padding: 20px;
-  }

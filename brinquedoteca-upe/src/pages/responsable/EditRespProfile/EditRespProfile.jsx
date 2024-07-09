@@ -52,17 +52,20 @@ const EditRespProfile = () => {
   };
 
   return (
-    <div className="profile-form-container">
+    <div className="t6-profile-form-container">
       <TopBar/>
-      <div className='resp-prof'>
-        <h2 className='title-resp-prof'>Perfil do Responsável</h2>
-        <FaPen className='icon-resp-prof'/>
+      <div className='t6-resp-prof'>
+        <h2 className='t6-title-resp-prof'>Perfil do Responsável</h2>
+        <div className='t6-icon-box'>
+          <FaPen className='t6-icon-resp-prof'/>
+        </div>
+
       </div>
       <form onSubmit={handleSubmit}>
-        <div className='form-resp-prof'>
+        <div className='t6-form-resp-prof'>
           <div>
-            <div className="form-group">
-              <p className='label-resp-prof'>Nome completo:</p>
+            <div className="t6-form-group">
+              <p className='t6-label-resp-prof'>Nome completo:</p>
               <TextInput
                 type="text"
                 name="nome"
@@ -71,8 +74,8 @@ const EditRespProfile = () => {
                 placeholder="Fulano da Silva"
               />
             </div>
-            <div className="form-group">
-              <p className='label-resp-prof'>CEP:</p>
+            <div className="t6-form-group">
+              <p className='t6-label-resp-prof'>CEP:</p>
               <TextInput
                 type="text"
                 name="cep"
@@ -82,8 +85,8 @@ const EditRespProfile = () => {
                 
               />
             </div>
-            <div className="form-group">
-              <p className='label-resp-prof'>Rua:</p>
+            <div className="t6-form-group">
+              <p className='t6-label-resp-prof'>Rua:</p>
               <TextInput
                 type="text"
                 name="rua"
@@ -92,9 +95,9 @@ const EditRespProfile = () => {
                 placeholder="Rua dos Tal"
               />
             </div>
-            <div className='div-bairro-resp'>
-              <div className="form-group">
-                <p className='label-resp-prof'>Número:</p>
+            <div className='t6-div-bairro-resp'>
+              <div className="t6-form-group">
+                <p className='t6-label-resp-prof'>Número:</p>
                 <TextInput
                   type="text"
                   name="numero"
@@ -103,8 +106,8 @@ const EditRespProfile = () => {
                   placeholder="13"
                 />
               </div>
-              <div className="form-group">
-                <p className='label-resp-prof'>Bairro:</p>
+              <div className="t6-form-group">
+                <p className='t6-label-resp-prof'>Bairro:</p>
                 <TextInput
                   type="text"
                   name="bairro"
@@ -116,8 +119,8 @@ const EditRespProfile = () => {
             </div>
           </div>
           <div>
-            <div className="form-group">
-              <p className='label-resp-prof'>E-mail:</p>
+            <div className="t6-form-group">
+              <p className='t6-label-resp-prof'>E-mail:</p>
               <TextInput
                 type="email"
                 name="email"
@@ -126,8 +129,8 @@ const EditRespProfile = () => {
                 placeholder="email@gmail.com"
               />
             </div>
-            <div className="form-group">
-              <p className='label-resp-prof'>Telefone para contato:</p>
+            <div className="t6-form-group">
+              <p className='t6-label-resp-prof'>Telefone para contato:</p>
               <TextInput
                 type="text"
                 name="telefone"
@@ -136,8 +139,8 @@ const EditRespProfile = () => {
                 placeholder="(XX) XXXXX-XXXX"
               />
             </div>
-            <div className="form-group">
-              <p className='label-resp-prof'>CPF:</p>
+            <div className="t6-form-group">
+              <p className='t6-label-resp-prof'>CPF:</p>
               <TextInput
                 type="text"
                 name="cpf"
@@ -146,8 +149,8 @@ const EditRespProfile = () => {
                 placeholder="XXX.XXX.XXX-XX"
               />
             </div>
-            <div className="form-group">
-              <p className='label-resp-prof'>Senha:</p>
+            <div className="t6-form-group">
+              <p className='t6-label-resp-prof'>Senha:</p>
               <TextInput
                 type="password"
                 name="senha"
@@ -159,11 +162,11 @@ const EditRespProfile = () => {
           </div>
         </div>
       </form>
-      <div className='end-resp-prof'>
-        <div className="back-link">
-          <a href="/">Voltar para Home?</a>
+      <div className='t6-end-resp-prof'>
+        <div className="t6-back-link">
+          <a href="/homeResponsable" className='t6-a'>Voltar para Home?</a>
         </div>
-        <button type="submit">Salvar</button>
+        <button type="submit" className='t6-button'>Salvar</button>
       </div>
     </div>
   );

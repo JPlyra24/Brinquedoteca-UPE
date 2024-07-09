@@ -15,8 +15,8 @@
 
 .logo {
   height: 100%; /* Assegura que a altura da imagem seja igual à altura da barra */
-  max-height: 50px; /* Define uma altura máxima para as imagens */
-  max-width: 50px;
+  max-height: 40px; /* Define uma altura máxima para as imagens */
+  max-width: 40px;
   margin-right: 20px;
 }
 

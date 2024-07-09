@@ -38,14 +38,14 @@ const RegisterKid = () => {
   };
 
   return (
-    <div className="t4-container">
+    <div className="t7-container">
       <TopBar/>
-      <div className='t4-title-box'>
-        <h2 className='t4-title'>Cadastrar criança</h2>
+      <div className='t7-title-box'>
+        <h2 className='t7-title'>Cadastrar criança</h2>
       </div>
       <div>
-        <div className="t4-form-group">
-          <p className='t4-label'>Nome completo:</p>
+        <div className="t7-form-group">
+          <p className='t7-label'>Nome completo:</p>
           <TextInput
             type="text"
             placeholder="Digite o nome completo..."
@@ -54,8 +54,8 @@ const RegisterKid = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="t4-form-group">
-          <p className='t4-label'>Data de nascimento:</p>
+        <div className="t7-form-group">
+          <p className='t7-label'>Data de nascimento:</p>
           <TextInput
             type="text"
             placeholder="DD/MM/AAAA"
@@ -64,8 +64,8 @@ const RegisterKid = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="t4-form-group">
-          <p className='t4-label'>Observações:</p>
+        <div className="t7-form-group">
+          <p className='t7-label'>Observações:</p>
           <TextInput
             type="text"
             placeholder="Alergias, medos, etc..."
@@ -74,8 +74,8 @@ const RegisterKid = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="t4-form-group">
-          <p className='t4-label'>Descrição:</p>
+        <div className="t7-form-group">
+          <p className='t7-label'>Descrição:</p>
           <TextInput
             type="text"
             placeholder="Descrição..."
@@ -84,11 +84,11 @@ const RegisterKid = () => {
             onChange={handleChange}
           />
         </div>
-        <div className='t4-buttons-box'>
+        <div className='t7-buttons-box'>
           <p>
-            <a href="/homeResponsable" className='t4-a'>Voltar para Home?</a>
+            <a href="/homeResponsable" className='t7-a'>Voltar para Home?</a>
           </p>
-          <button className='t4-button' onClick={handleRegisterChild}>Cadastrar</button>
+          <button className='t7-button' onClick={handleRegisterChild}>Cadastrar</button>
         </div>
       </div>
     </div>

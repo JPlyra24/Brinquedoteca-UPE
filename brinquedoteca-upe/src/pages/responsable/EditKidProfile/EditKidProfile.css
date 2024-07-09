@@ -32,6 +32,18 @@
     color: white;
 }
 
+.t7-form-group {
+    width: 100%;
+    padding-inline: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .t7-label{
+    padding-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+
 .t7-buttons-box{
     display: flex;
     justify-content: space-between;

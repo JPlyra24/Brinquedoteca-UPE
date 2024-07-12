@@ -95,18 +95,11 @@
         width: 100%;
         display: flex;
         justify-content: flex-start;
-
-    .t6-profile-form-container {
-        min-height: 100%;
-        margin: auto;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-family: "Montserrat";
     }
+
     .t6-form-resp-prof{
         display: flex;
         flex-direction: column;
-        padding-bottom: 100vh;
     }
     }
-  }
+

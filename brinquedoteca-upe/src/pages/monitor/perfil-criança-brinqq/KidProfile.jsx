@@ -1,72 +1,123 @@
 import React from 'react';
-import axios from 'axios';
 import './KidProfile.css'
+import TopBar from '../../../components/TopBar';
+import TextInput from '../../../components/TextInput';
+import { useNavigate } from 'react-router-dom';
 
 const KidProfile = () => {
+  const navigate = useNavigate();
+
+  const handleVoltar = () => {
+    navigate('/homemonitor');
+  };
   return (
-    <div className="container">
-      <header>
-        <img src="logo.png" alt="Brinquedoteca" />
-      </header>
+    <div className='t9-container'>
+      <TopBar/>
+      <div className='t9-content'>
+        <div className='t9-info'>
+          <div className='t9-title-box'>
+            <h2 className='t9-title'>Perfil da criança</h2>
+          </div>
+          <div className="t9-info-group">
+            <p className='t9-p'>Nome completo:</p>
+            <TextInput
+              type="text"
+              placeholder="Digite o nome completo..." 
+            />
+          </div>
+          <div className="t9-info-group">
+            <p className='t9-p'>Data de Nascimento:</p>
+            <TextInput
+              type="text"
+              placeholder="DD/MM/AAAA"
+            />
+          </div>
+          <div className="t9-info-group">
+            <p className='t9-p'>Observações:</p>
+            <TextInput
+              type="text"
+              placeholder="Alergias, medos, etc..."
+            />
+          </div>
+          <div className="t9-info-group">
+            <p className='t9-p'>Descrição:</p>
+            <TextInput
+              type="text"
+              placeholder="----"
+            />
+          </div>
+        </div>
 
-      <form>
-        <section className="perfil-crianca">
-          <h2>Perfil da Criança</h2>
-          <div className="form-group">
-            <label>Nome completo:</label>
-            <input type="text" placeholder="Digite o nome completo..." />
-          </div>
-          <div className="form-group">
-            <label>Data de Nascimento:</label>
-            <input type="text" placeholder="DD/MM/AAAA" />
-          </div>
-          <div className="form-group">
-            <label>Observações:</label>
-            <input type="text" placeholder="Alergias, medos, etc..." />
-          </div>
-          <div className="form-group">
-            <label>Descrição:</label>
-            <textarea placeholder="----"></textarea>
-          </div>
-        </section>
+        <div className='t9-info-resp'>
 
-        <section className="responsavel">
-          <h2>Responsável</h2>
-          <div className="form-group">
-            <label>Nome Completo:</label>
-            <input type="text" placeholder="Fulano da Silva" />
+          <div className='t9-title-box'>
+            <h2 className='t9-title'>Responsável</h2>
           </div>
-          <div className="form-group">
-            <label>CEP:</label>
-            <input type="text" placeholder="XXXXX-XXX" />
+
+          <div className="t9-info-group">
+            <p className='t9-p'>Nome Completo:</p>
+            <TextInput
+              type="text"
+              placeholder="Fulano da Silva"
+            />
           </div>
-          <div className="form-group">
-            <label>Rua:</label>
-            <input type="text" placeholder="Rua dos Tal" />
+          <div className="t9-info-group">
+            <p className='t9-p'>CEP:</p>
+            <TextInput
+              type="text"
+              placeholder="XXXXX-XXX"
+            />
           </div>
-          <div className="form-group">
-            <label>Número:</label>
-            <input type="text" placeholder="13"/>
+          <div className="t9-info-group">
+            <p className='t9-p'>Rua:</p>
+            <TextInput
+              type="text"
+              placeholder="Rua dos Tal"
+            />
           </div>
-          <div className="form-group">
-            <label>Bairro:</label>
-            <input type="" placeholder="Nome do Bairro" />
+          <div className='t9-flex-info'>
+            <div className="t9-info-group">
+              <p className='t9-p'>Número:</p>
+              <TextInput
+                type="text"
+                placeholder="13"
+              />
+            </div>
+            <div className="t9-info-group">
+              <p className='t9-p'>Bairro:</p>
+              <TextInput
+                type=""
+                placeholder="Nome do Bairro"
+              />
+            </div>
           </div>
-          <div className="form-group">
-            <label>E-mail:</label>
-            <input type="email" placeholder="seuemail@email.com" />
+          <div className="t9-info-group">
+            <p className='t9-p'>E-mail:</p>
+            <TextInput
+              type="email"
+              placeholder="seuemail@email.com"
+            />
           </div>
-          <div className="form-group">
-            <label>Telefone para contato:</label>
-            <input type="text" placeholder="(XX) XXXXX-XXXX" />
+          <div className="t9-info-group">
+            <p className='t9-p'>Telefone para contato:</p>
+            <TextInput
+              type="text"
+              placeholder="(XX) XXXXX-XXXX"
+            />
           </div>
-          <div className="form-group">
-            <label>CPF:</label>
-            <input type="text" placeholder="XXX.XXX.XXX-XX" />
+          <div className="t9-info-group">
+            <p className='t9-p'>CPF:</p>
+            <TextInput
+              type="text"
+              placeholder="XXX.XXX.XXX-XX"
+            />
           </div>
-        </section>
-        <button type="button">Voltar</button>
-      </form>
+        </div>
+      </div>
+      <div className='t9-button-box'>
+        <button className='t9-button' onClick={handleVoltar}>Voltar</button>
+      </div>
+        
     </div>
   );
 };

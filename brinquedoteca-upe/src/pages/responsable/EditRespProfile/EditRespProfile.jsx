@@ -59,8 +59,8 @@ const EditRespProfile = () => {
         <div className='t6-icon-box'>
           <FaPen className='t6-icon-resp-prof'/>
         </div>
-
       </div>
+      
       <form onSubmit={handleSubmit}>
         <div className='t6-form-resp-prof'>
           <div>

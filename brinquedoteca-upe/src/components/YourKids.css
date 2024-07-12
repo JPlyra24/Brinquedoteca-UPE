@@ -5,7 +5,7 @@
     flex-direction: column;
     max-height: 45vh;
     padding-inline: 20px;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .t3-1-title-box{
@@ -32,12 +32,12 @@
     color: white;
     border: none;
     border-radius: 50px;
-    cursor: pointer;
     margin-bottom: 10px;
 }
 
 .t3-1-add-button:hover {
     background-color: #142955;
+    cursor: pointer;
 }
 
 .t3-1-kids {

@@ -1,23 +1,21 @@
 import React from 'react';
-import '../YourKids/YourKids.css';
-import Kid from '../YourKids/Kid/Kid';
-import { FaPlus } from 'react-icons/fa';
+import './KidsTodayList.css';
+import KidsToday from './KidsToday/KidsToday';
 
 const KidsTodayList = () => {
   return (
-    <div className="t3-1-container">
-        <div className='t3-1-title-box'>
-            <div className="t3-1-title">Sua(s) criança(s):</div>
-            <button className="t3-1-add-button"><FaPlus /></button>
+    <div className="t8-1-container">
+        <div className='t8-1-title-box'>
+            <div className="t8-1-title">Crianças hoje:</div>
         </div>
-        <div className='t3-1-kids'>
-          <Kid/>
-          <Kid/>
-          <Kid/>
-          <Kid/>
-          <Kid/>
-          <Kid/>
-          <Kid/>
+        <div className='t8-1-kids'>
+          <KidsToday/>
+          <KidsToday/>
+          <KidsToday/>
+          <KidsToday/>
+          <KidsToday/>
+          <KidsToday/>
+          <KidsToday/>
         </div>
     </div>
   );

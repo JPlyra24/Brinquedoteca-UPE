@@ -1,0 +1,58 @@
+/*KidsTodayList = t8-1*/
+
+.t8-1-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 45vh;
+    padding-inline: 20px;
+    padding-top: 20px;
+}
+
+.t8-1-title-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.t8-1-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #945236;
+    margin-bottom: 10px;
+}
+
+.t8-1-add-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    background-color: #1f387d;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+.t8-1-add-button:hover {
+    background-color: #142955;
+    cursor: pointer;
+}
+
+.t8-1-kids {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+}
+
+@media (min-width: 768px) {
+    .t8-1-container {
+        display: flex;
+        flex-direction: column;
+        max-height: 95vh;
+        padding-inline: 20px;
+        padding-top: 10px;
+    }
+  }
+  

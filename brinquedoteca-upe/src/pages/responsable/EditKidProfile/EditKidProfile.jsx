@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './EditKidProfile.css'; 
-import TopBar from '../../../components/TopBar';
+import TopBar from '../../../components/TopBar/TopBar';
 import TextInput from '../../../components/TextInput';
 import { FaPen } from 'react-icons/fa';
 

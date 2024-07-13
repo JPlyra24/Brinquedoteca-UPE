@@ -1,9 +1,9 @@
 import React from 'react';
-import './YourKids.css';
-import Kid from './Kid';
+import '../YourKids/YourKids.css';
+import Kid from '../YourKids/Kid/Kid';
 import { FaPlus } from 'react-icons/fa';
 
-const YourKids = () => {
+const KidsTodayList = () => {
   return (
     <div className="t3-1-container">
         <div className='t3-1-title-box'>
@@ -23,4 +23,4 @@ const YourKids = () => {
   );
 };
 
-export default YourKids;
+export default KidsTodayList;

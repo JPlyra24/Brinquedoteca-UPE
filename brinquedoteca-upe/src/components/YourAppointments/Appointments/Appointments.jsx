@@ -1,7 +1,6 @@
 import React from 'react';
 import './Appointments.css'; // Import your CSS for styling
 import { FaRegTrashCan } from "react-icons/fa6";
-import { Link } from 'react-router-dom';
 
 const Appointments = () => {
   return (

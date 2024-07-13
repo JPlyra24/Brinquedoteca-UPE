@@ -1,8 +1,8 @@
 import React from 'react';
-import './YourAppointments.css';
-import Appointments from './Appointments';
+import '../YourAppointments/YourAppointments.css';
+import Appointments from '../YourAppointments/Appointments/Appointments';
 
-const YourAppointments = () => {
+const HistoricList = () => {
   return (
     <div className="t3-2-container">
         <div className='t3-2-title-box'>
@@ -23,4 +23,4 @@ const YourAppointments = () => {
   );
 };
 
-export default YourAppointments;
+export default HistoricList;

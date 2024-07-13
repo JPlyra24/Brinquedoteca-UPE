@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './EditRespProfile.css'
 import TextInput from '../../../components/TextInput';
-import TopBar from '../../../components/TopBar';
+import TopBar from '../../../components/TopBar/TopBar';
 import "@fontsource/montserrat";
 import "@fontsource/montserrat/800.css";
 import { FaPen } from "react-icons/fa";

@@ -1,7 +1,6 @@
 import React from 'react';
 import './Kid.css'; // Import your CSS for styling
 import { FaUser } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 
 const Kid = () => {
     const handleClickR = () => {

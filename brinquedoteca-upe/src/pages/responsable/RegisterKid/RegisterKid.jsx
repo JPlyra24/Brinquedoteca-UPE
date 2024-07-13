@@ -4,7 +4,7 @@ import TextInput from '../../../components/TextInput';
 import brinquedotecaLogo from '../../../assets/Brinquedoteca.png';
 import upeLogo from '../../../assets/Logoupe.png';
 import { request } from '../../../services/api';
-import TopBar from '../../../components/TopBar';
+import TopBar from '../../../components/TopBar/TopBar';
 
 const RegisterKid = () => {
   const [formData, setFormData] = useState({

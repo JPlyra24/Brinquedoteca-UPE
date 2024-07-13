@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TopBar from '../../../components/TopBar';
+import TopBar from '../../../components/TopBar/TopBar';
 import { FaPen } from 'react-icons/fa';
 import './EditMonitorProfile.css'; 
 import TextInput from '../../../components/TextInput';

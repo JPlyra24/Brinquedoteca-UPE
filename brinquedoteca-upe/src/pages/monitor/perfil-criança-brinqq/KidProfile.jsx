@@ -1,6 +1,6 @@
 import React from 'react';
 import './KidProfile.css'
-import TopBar from '../../../components/TopBar';
+import TopBar from '../../../components/TopBar/TopBar';
 import TextInput from '../../../components/TextInput';
 import { useNavigate } from 'react-router-dom';
 

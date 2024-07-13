@@ -1,6 +1,6 @@
 import React from 'react';
 import TextInput from '../../../components/TextInput';
-import TopBar from '../../../components/TopBar';
+import TopBar from '../../../components/TopBar/TopBar';
 import './SchedulingKid.css';
 
 const SchedulingKid = () => {

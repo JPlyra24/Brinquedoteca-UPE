@@ -1,8 +1,8 @@
 import React from 'react';
 import './HomeResponsable.css'
-import TopBar from '../../../components/TopBar';
-import YourKids from '../../../components/YourKids';
-import YourAppointments from '../../../components/YourAppointments';
+import TopBar from '../../../components/TopBar/TopBar';
+import YourKids from '../../../components/YourKids/YourKids';
+import YourAppointments from '../../../components/YourAppointments/YourAppointments';
 
 
 const HomeResponsable = () => {

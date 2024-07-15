@@ -5,8 +5,6 @@ import brinquedotecaLogo from "../assets/Brinquedoteca.png";
 import upeLogo from "../assets/Logoupe.png";
 import { Link } from "react-router-dom";
 import { CreateUserParent } from "../services/login-service";
-import "@fontsource/montserrat";
-import "@fontsource/montserrat/800.css";
 import { message } from "antd";
 import { useNavigate } from "react-router-dom";
 const { TextArea } = Input;
@@ -62,34 +60,43 @@ const Register = () => {
         time: 2,
       });
     } else {
-      const userData = await CreateUserParent({
-        cpf: formData.cpf,
-        name: formData.name,
-        lastName: formData.lastName,
-        email: formData.email,
-        phone: formData.phone,
-        password: formData.password,
-        address: {
-          cep: formData.address.cep,
-          street: formData.address.street,
-          district: formData.address.district,
-          number: formData.address.number,
-        },
-        birthday: formData.birthday ? formData.birthday.toISOString() : null,
-        role: "RESPONSAVEL",
-      });
+      try {
+        const userData = await CreateUserParent({
+          cpf: formData.cpf,
+          name: formData.name,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          password: formData.password,
+          address: {
+            cep: formData.address.cep,
+            street: formData.address.street,
+            district: formData.address.district,
+            number: formData.address.number,
+          },
+          birthday: formData.birthday ? formData.birthday.toISOString() : null,
+          role: "RESPONSAVEL",
+        });
 
-      if (userData.status !== 200) {
+        if (userData && userData.status === 200) {
+          navigate("/homeResponsable");
+          message.open({
+            type: "success",
+            content: "Login Realizado com sucesso",
+            time: 2,
+          });
+        } else {
+          message.open({
+            type: "error",
+            content: "Não foi possível realizar o login",
+            time: 2,
+          });
+        }
+      } catch (error) {
+        console.error("Error during signup:", error);
         message.open({
           type: "error",
-          content: "Não foi possível realizar o login",
-          time: 2,
-        });
-      } else {
-        navigate("/homeResponsable");
-        message.open({
-          type: "success",
-          content: "Login Realizado com sucesso",
+          content: "Erro ao cadastrar usuário",
           time: 2,
         });
       }

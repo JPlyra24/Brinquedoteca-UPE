@@ -50,6 +50,7 @@ export const CreateUserParent = async (data: UserRequest) => {
   try {
     const response = await api.post("/parent/register", data);
     Cookies.set("token", response.data.token);
+    return response;
   } catch (error) {
     if (error instanceof AxiosError) {
       return error.response;

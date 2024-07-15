@@ -5,8 +5,9 @@ import brinquedotecaLogo from "../../../assets/Brinquedoteca.png";
 import upeLogo from "../../../assets/Logoupe.png";
 import { addChild } from "../../../services/kid-registration";
 import TopBar from "../../../components/TopBar/TopBar";
-
+import { useNavigate } from "react-router-dom";
 const RegisterKid = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     lastName: "",
@@ -75,11 +76,12 @@ const RegisterKid = () => {
         },
         observations: formData.observations,
         description: formData.description,
-        birthday: formData.birthday.toISOString(), // Convert Date object to ISO string
+        birthday: formData.birthday.toISOString(),
       });
 
       if (response.status === 200) {
         message.success("Criança cadastrada com sucesso");
+        navigate("/homeResponsable");
       } else {
         message.error("Erro no cadastro de criança");
       }

@@ -3,9 +3,11 @@ import { FaUser, FaSignOutAlt } from 'react-icons/fa';
 import './TopBar.css';
 import brinquedotecaLogo from '../../assets/Brinquedoteca.png';
 import upeLogo from '../../assets/Logoupe.png';
-import { Button } from 'antd';
+import { Button, message } from 'antd';
 import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 const TopBar = () => {
+  const navigate = useNavigate();
   return (
     <div className="topbar-container">
       <div className="topbar-left">
@@ -14,7 +16,11 @@ const TopBar = () => {
       </div>
       <div className="topbar-right">
         <FaUser className="icon" />
-        <FaSignOutAlt className="icon" onClick={() => {Cookies.remove('token', {path: "/"})}}/>
+        <FaSignOutAlt className="icon" onClick={() => {Cookies.remove('token', {path: "/"}); navigate("/"); message.open({
+          type: "info",
+          content: "Logout realizado com sucesso",
+          time: 2
+        })}}/>
         
       </div>
     </div>

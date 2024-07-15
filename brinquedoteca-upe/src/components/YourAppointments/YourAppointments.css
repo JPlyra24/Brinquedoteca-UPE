@@ -3,9 +3,9 @@
 .t3-2-container {
     display: flex;
     flex-direction: column;
-    max-height: 45vh;
+    height: 45vh;
     padding-inline: 20px;
-    border-left-color: #F4F3FF;
+    background-color: #F4F3FF;
     padding-top: 20px;
 }
 
@@ -35,7 +35,8 @@
         flex-direction: column;
         max-height: 95vh;
         padding-inline: 20px;
-        background-color: #F4F3FF;
+        background-color: white;
+        border-left: #F4F3FF 1px solid;
         padding-top: 20px;
     }
   }

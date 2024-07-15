@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './YourAppointments.css';
 import Appointments from './Appointments/Appointments';
 import { api } from '../../services/api';
+import { Empty } from 'antd';
 
 const YourAppointments = () => {
   const [appointments, setAppointments] = useState([]);
@@ -12,7 +13,7 @@ const YourAppointments = () => {
         const response = await api.get('/parent/list');
         console.log(response);
         if (response.data && Array.isArray(response.data)) {
-          setAppointments(response.data);
+          setAppointments(response.data.reverse());
         } else {
           console.error('Estrutura de dados inesperada:', response.data);
         }
@@ -35,7 +36,7 @@ const YourAppointments = () => {
             <Appointments key={appointment.id} appointment={appointment} />
           ))
         ) : (
-          <p>Nenhum agendamento encontrado.</p>
+          <Empty description= "Nenhum agendamento criado"/>
         )}
       </div>
     </div>

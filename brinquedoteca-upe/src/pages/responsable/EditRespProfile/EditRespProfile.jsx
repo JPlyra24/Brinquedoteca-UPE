@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import './EditRespProfile.css';
 import TextInput from '../../../components/TextInput';
 import TopBar from '../../../components/TopBar/TopBar';
@@ -25,17 +24,16 @@ const EditRespProfile = () => {
       try {
         const response = await api.get('/parent'); // Rota que busca informações do perfil
         const {data} = response;
-        console.log(data)
         setFormData({
-          nome: data.name,
+          nome: data.name +" "+ data.lastName,
           cep: data.address.cep,
           rua: data.address.street,
           numero: data.address.number,
           bairro: data.address.district,
-          email: data.lastName,
-          telefone: data.address.cep,
-          cpf: data.address.cep,
-          senha: data.address.cep
+          email: data.email,
+          telefone: data.phone,
+          cpf: data.cpf,
+          senha: data.password
         });
       } catch (error) {
         console.error('Erro ao buscar os dados:', error);
@@ -94,6 +92,7 @@ const EditRespProfile = () => {
                 onChange={handleChange}
                 placeholder={formData.nome}
                 disabled={!isEditing}
+
               />
             </div>
             <div className="t6-form-group">

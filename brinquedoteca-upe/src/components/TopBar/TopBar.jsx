@@ -15,7 +15,7 @@ const TopBar = () => {
         <img src={upeLogo} alt="UPE" className="logo" />
       </div>
       <div className="topbar-right">
-        <FaUser className="icon" />
+        <FaUser className="icon" onClick={() => {navigate('/editRespprofile')}} />
         <FaSignOutAlt className="icon" onClick={() => {Cookies.remove('token', {path: "/"}); navigate("/"); message.open({
           type: "info",
           content: "Logout realizado com sucesso",

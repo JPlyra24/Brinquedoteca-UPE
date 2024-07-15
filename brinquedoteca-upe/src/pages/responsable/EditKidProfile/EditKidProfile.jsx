@@ -16,7 +16,7 @@ const EditKidProfile = () => {
   useEffect(() => {
     const fetchChildInfo = async () => {
       try {
-        const response = await api.get("/child/");
+        const response = await api.get("/child");
         const {data} = response.data;
         setFormData({
           nomeCompleto: data.name,

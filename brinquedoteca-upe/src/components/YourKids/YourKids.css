@@ -3,7 +3,7 @@
 .t3-1-container {
     display: flex;
     flex-direction: column;
-    max-height: 45vh;
+    height: 45vh;
     padding-inline: 20px;
     padding-top: 20px;
 }
@@ -50,7 +50,7 @@
     .t3-1-container {
         display: flex;
         flex-direction: column;
-        max-height: 95vh;
+        height: 95vh;
         padding-inline: 20px;
         padding-top: 10px;
     }

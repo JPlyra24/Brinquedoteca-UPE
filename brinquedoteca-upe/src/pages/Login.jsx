@@ -68,12 +68,14 @@ const Login = () => {
             type="email"
             placeholder="Digite seu e-mail..."
             value={email}
+            className="t1-login-input"
             onChange={(e) => handleEmailChange(e.target.value)}
           />
           <p className="t1-login-title">Senha:</p>
           <Input
             type="password"
             placeholder="Digite sua senha..."
+            className="t1-login-input"
             value={password}
             onChange={(e) => handlePasswordChange(e.target.value)}
           />

@@ -15,16 +15,16 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login/>} />
-        <Route path="/register" element={<Register/>} />
-        <Route path="/homeResponsable" element={<HomeResponsable/>} />
-        <Route path="/registerkid" element={<RegisterKid/>} />
-        <Route path="/schedulingkid" element={<SchedulingKid/>} />
-        <Route path="/editRespprofile" element={<EditRespProfile/>} />
-        <Route path="/editKidprofile" element={<EditKidProfile/>} />
-        <Route path="/editmonitorprofile" element={<EditMonitorProfile/>} />
-        <Route path="/homemonitor" element={<HomeMonitor/>} />
-        <Route path="/kidprofile" element={<KidProfile/>} />
+      <Route path="/" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/homeResponsable" element={<HomeResponsable />} />
+        <Route path="/registerkid" element={<RegisterKid />} />
+        <Route path="/schedulingkid/:id" element={<SchedulingKid />} />
+        <Route path="/editRespprofile" element={<EditRespProfile />} />
+        <Route path="/editKidprofile/:id" element={<EditKidProfile />} />
+        <Route path="/editmonitorprofile" element={<EditMonitorProfile />} />
+        <Route path="/homemonitor" element={<HomeMonitor />} />
+        <Route path="/kidprofile/:id" element={<KidProfile />} />
       </Routes>
     </Router>
   );

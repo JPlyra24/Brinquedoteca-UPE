@@ -131,6 +131,7 @@ const Register = () => {
             type="text"
             placeholder="Digite seu nome..."
             name="name"
+            className="t1-login-input"
             value={formData.name}
             onChange={handleChange}
           />
@@ -139,6 +140,7 @@ const Register = () => {
             type="text"
             placeholder="Digite seu sobrenome..."
             name="lastName"
+            className="t1-login-input"
             value={formData.lastName}
             onChange={handleChange}
           />
@@ -147,6 +149,7 @@ const Register = () => {
             type="text"
             placeholder="Digite seu CEP..."
             name="cep"
+            className="t1-login-input"
             value={formData.address.cep}
             onChange={handleChange}
           />
@@ -155,6 +158,7 @@ const Register = () => {
             type="text"
             placeholder="Digite sua rua..."
             name="street"
+            className="t1-login-input"
             value={formData.address.street}
             onChange={handleChange}
           />
@@ -165,6 +169,7 @@ const Register = () => {
                 type="text"
                 placeholder="Nº"
                 name="number"
+                className="t1-login-input"
                 value={formData.address.number}
                 onChange={handleChange}
               />
@@ -175,6 +180,7 @@ const Register = () => {
                 type="text"
                 placeholder="Digite seu bairro..."
                 name="district"
+                className="t1-login-input"
                 value={formData.address.district}
                 onChange={handleChange}
               />
@@ -185,6 +191,7 @@ const Register = () => {
             type="email"
             placeholder="Digite seu e-mail..."
             name="email"
+            className="t1-login-input"
             value={formData.email}
             onChange={handleChange}
           />
@@ -203,6 +210,7 @@ const Register = () => {
             placeholder="Digite seu CPF..."
             name="cpf"
             value={formData.cpf}
+            className="t1-login-input"
             onChange={handleChange}
           />
           <p className="t2-register-title">Data de Nascimento:</p>
@@ -217,6 +225,7 @@ const Register = () => {
             type="password"
             placeholder="Digite sua senha..."
             name="password"
+            className="t1-login-input"
             value={formData.password}
             onChange={handleChange}
           />
@@ -225,6 +234,7 @@ const Register = () => {
             type="password"
             placeholder="Confirme sua senha..."
             name="confirmarSenha"
+            className="t1-login-input"
             value={formData.confirmarSenha}
             onChange={handleChange}
           />

@@ -67,6 +67,10 @@
     background-color: #0056b3;
    }
    
+   .t7-button:disabled{
+    background-color: gray;
+   }
+
    .t7-a {
        margin-inline: 20px;
        display: flex;

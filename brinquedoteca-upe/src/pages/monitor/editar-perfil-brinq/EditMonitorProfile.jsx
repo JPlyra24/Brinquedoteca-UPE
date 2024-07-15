@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TopBar from '../../../components/TopBar/TopBar';
 import { FaPen } from 'react-icons/fa';
 import './EditMonitorProfile.css'; 
 import TextInput from '../../../components/TextInput';
+import { api } from '../../../services/api';
 
 const EditMonitorProfile = () => {
   const [formData, setFormData] = useState({
@@ -17,16 +18,56 @@ const EditMonitorProfile = () => {
     curso: 'Pedagogia'
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+  useEffect(() => {
+    // Função para buscar dados do perfil do responsável
+    const fetchMonitorInfo = async () => {
+      try {
+        const response = await api.get('/brinquedista/info'); // Rota que busca informações do perfil
+        const {data} = response;
+        setFormData({
+          nome: data.name +" "+ data.lastName,
+          cep: data.address.cep,
+          rua: data.address.street,
+          numero: data.address.number,
+          bairro: data.address.district,
+          email: data.email,
+          telefone: data.phone,
+          cpf: data.cpf,
+          curso: data.curso
+        });
+      } catch (error) {
+        console.error('Erro ao buscar os dados:', error);
+      }
+    };
+
+    fetchMonitorInfo();
+  }, []);
+
+  const [isEditing, setIsEditing] = useState(false);
+
+  const handleEditClick = () => {
+    setIsEditing(!isEditing);
   };
 
-  const handleSave = () => {
-    console.log('Dados salvos', formData);
+  const handleChange = (e) => {
+    if (isEditing){
+      const { name, value } = e.target;
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!isEditing) {
+      return; // Retorna nada se não estiver em modo de edição
+    }
+    try {
+      await api.post('/parent', formData);
+      console.log('Dados atualizados com sucesso!');
+      setIsEditing(false); // Desabilita o modo de edição após salvar
+    } catch (error) {
+      console.error('Erro ao atualizar os dados:', error);
+    }
   };
 
   return (
@@ -35,18 +76,19 @@ const EditMonitorProfile = () => {
       <div className='t10-title-box'>
         <h2 className='t10-title'>Perfil do brinquedista</h2>
         <div className='t10-icon-box'>
-          <FaPen className='t10-icon'/>
+          <FaPen className='t10-icon' onClick={handleEditClick}/>
         </div>
       </div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="t10-form-group">
           <p className='t10-label'>Nome completo:</p>
           <TextInput
             type="text"
             name="name"
             placeholder="Nome completo"
-            value={formData.cep}
+            value={formData.nome}
             onChange={handleChange}
+            disabled={!isEditing}
           />
         </div>
         <div className="t10-form-group">
@@ -55,8 +97,9 @@ const EditMonitorProfile = () => {
             type="text" 
             name="CEP"
             placeholder="Nome completo"
-            value={formData.nome}
+            value={formData.cep}
             onChange={handleChange}
+            disabled={!isEditing}
           />
         </div>
         <div className="t10-form-group">
@@ -67,6 +110,7 @@ const EditMonitorProfile = () => {
             placeholder="Rua"
             value={formData.rua}
             onChange={handleChange}
+            disabled={!isEditing}
           />
         </div>
           <div className='t6-div-bairro-resp'>
@@ -77,7 +121,8 @@ const EditMonitorProfile = () => {
                 name="numero"
                 placeholder="Número"
                 value={formData.numero}
-                onChange={handleChange} 
+                onChange={handleChange}
+                disabled={!isEditing}
               />
             </div>
             <div className="t10-form-group">
@@ -88,6 +133,7 @@ const EditMonitorProfile = () => {
                 placeholder="Bairro"
                 value={formData.bairro}
                 onChange={handleChange}
+                disabled={!isEditing}
               />
             </div>
           </div>
@@ -99,6 +145,7 @@ const EditMonitorProfile = () => {
               placeholder="E-mail"
               value={formData.email}
               onChange={handleChange}
+              disabled={!isEditing}
             />
           </div>
           <div className="t10-form-group">
@@ -109,6 +156,7 @@ const EditMonitorProfile = () => {
               placeholder="Telefone para contato"
               value={formData.telefone}
               onChange={handleChange}
+              disabled={!isEditing}
             />
           </div>
           <div className="t10-form-group">
@@ -119,6 +167,7 @@ const EditMonitorProfile = () => {
               placeholder="CPF"
               value={formData.cpf}
               onChange={handleChange}
+              disabled={!isEditing}
             />
           </div>
           <div className="t10-form-group">
@@ -129,6 +178,7 @@ const EditMonitorProfile = () => {
               placeholder="Curso"
               value={formData.curso}
               onChange={handleChange}
+              disabled={!isEditing}
             />
           </div>
           
@@ -137,7 +187,7 @@ const EditMonitorProfile = () => {
         <div className="t10-back-link">
           <a href="/homeResponsable" className='t10-a'>Voltar para Home?</a>
         </div>
-        <button type="submit" className='t10-button'>Salvar</button>
+        <button type="submit" className='t10-button' disabled={!isEditing}>Salvar</button>
       </div>
     </div>
   );

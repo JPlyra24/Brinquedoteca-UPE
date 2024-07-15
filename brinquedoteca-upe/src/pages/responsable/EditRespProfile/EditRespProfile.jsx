@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './EditRespProfile.css'
+import './EditRespProfile.css';
 import TextInput from '../../../components/TextInput';
 import TopBar from '../../../components/TopBar/TopBar';
-import "@fontsource/montserrat";
-import "@fontsource/montserrat/800.css";
-import { FaPen } from "react-icons/fa";
+import { FaPen } from 'react-icons/fa';
+import { api } from '../../../services/api';
 
 const EditRespProfile = () => {
   const [formData, setFormData] = useState({
@@ -21,153 +19,188 @@ const EditRespProfile = () => {
   });
 
   useEffect(() => {
-    axios.get('/api/v1/parent')
-      .then(response => {
-        const { nome, cep, rua, numero, bairro, email, telefone, cpf, senha } = response.data;
+    // Função para buscar dados do perfil do responsável
+    const fetchParentInfo = async () => {
+      try {
+        const response = await api.get('/parent'); // Rota que busca informações do perfil
+        const {data} = response;
         setFormData({
-          nome,
-          cep,
-          rua,
-          numero,
-          bairro,
-          email,
-          telefone,
-          cpf,
-          senha
+          nome: data.name +" "+ data.lastName,
+          cep: data.address.cep,
+          rua: data.address.street,
+          numero: data.address.number,
+          bairro: data.address.district,
+          email: data.email,
+          telefone: data.phone,
+          cpf: data.cpf,
+          senha: data.password
         });
-      })
-      .catch(error => {
+      } catch (error) {
         console.error('Erro ao buscar os dados:', error);
-      });
+      }
+    };
+
+    fetchParentInfo();
   }, []);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const [isEditing, setIsEditing] = useState(false);
+
+  const handleEditClick = () => {
+    setIsEditing(!isEditing);
   };
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    if (isEditing){
+      const { name, value } = e.target;
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    if (!isEditing) {
+      return; // Retorna nada se não estiver em modo de edição
+    }
+    try {
+      await api.post('/parent', formData);
+      console.log('Dados atualizados com sucesso!');
+      setIsEditing(false); // Desabilita o modo de edição após salvar
+    } catch (error) {
+      console.error('Erro ao atualizar os dados:', error);
+    }
   };
 
   return (
     <div className="t6-profile-form-container">
-      <TopBar/>
-      <div className='t6-resp-prof'>
-        <h2 className='t6-title-resp-prof'>Perfil do Responsável</h2>
-        <div className='t6-icon-box'>
-          <FaPen className='t6-icon-resp-prof'/>
+      <TopBar />
+      <div className="t6-resp-prof">
+        <h2 className="t6-title-resp-prof">Perfil do Responsável</h2>
+        <div className="t6-icon-box">
+          <FaPen className="t6-icon-resp-prof" onClick={handleEditClick}/>
         </div>
       </div>
-      
+
       <form onSubmit={handleSubmit}>
-        <div className='t6-form-resp-prof'>
+        <div className="t6-form-resp-prof">
           <div>
             <div className="t6-form-group">
-              <p className='t6-label-resp-prof'>Nome completo:</p>
+              <p className="t6-label-resp-prof">Nome completo:</p>
               <TextInput
                 type="text"
                 name="nome"
                 value={formData.nome}
                 onChange={handleChange}
-                placeholder="Fulano da Silva"
+                placeholder={formData.nome}
+                disabled={!isEditing}
+
               />
             </div>
             <div className="t6-form-group">
-              <p className='t6-label-resp-prof'>CEP:</p>
+              <p className="t6-label-resp-prof">CEP:</p>
               <TextInput
                 type="text"
                 name="cep"
                 value={formData.cep}
                 onChange={handleChange}
-                placeholder="XXXXX-XXX"
-                
+                placeholder={formData.cep}
+                disabled={!isEditing}
               />
             </div>
             <div className="t6-form-group">
-              <p className='t6-label-resp-prof'>Rua:</p>
+              <p className="t6-label-resp-prof">Rua:</p>
               <TextInput
                 type="text"
                 name="rua"
                 value={formData.rua}
                 onChange={handleChange}
-                placeholder="Rua dos Tal"
+                placeholder={formData.rua}
+                disabled={!isEditing}
               />
             </div>
-            <div className='t6-div-bairro-resp'>
+            <div className="t6-div-bairro-resp">
               <div className="t6-form-group">
-                <p className='t6-label-resp-prof'>Número:</p>
+                <p className="t6-label-resp-prof">Número:</p>
                 <TextInput
                   type="text"
                   name="numero"
                   value={formData.numero}
                   onChange={handleChange}
-                  placeholder="13"
+                  placeholder={formData.numero}
+                  disabled={!isEditing}
                 />
               </div>
               <div className="t6-form-group">
-                <p className='t6-label-resp-prof'>Bairro:</p>
+                <p className="t6-label-resp-prof">Bairro:</p>
                 <TextInput
                   type="text"
                   name="bairro"
                   value={formData.bairro}
                   onChange={handleChange}
-                  placeholder="Santos"
+                  placeholder={formData.bairro}
+                  disabled={!isEditing}
                 />
               </div>
             </div>
           </div>
           <div>
             <div className="t6-form-group">
-              <p className='t6-label-resp-prof'>E-mail:</p>
+              <p className="t6-label-resp-prof">E-mail:</p>
               <TextInput
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="email@gmail.com"
+                placeholder={formData.email}
+                disabled={!isEditing}
               />
             </div>
             <div className="t6-form-group">
-              <p className='t6-label-resp-prof'>Telefone para contato:</p>
+              <p className="t6-label-resp-prof">Telefone para contato:</p>
               <TextInput
                 type="text"
                 name="telefone"
                 value={formData.telefone}
                 onChange={handleChange}
-                placeholder="(XX) XXXXX-XXXX"
+                placeholder={formData.telefone}
+                disabled={!isEditing}
               />
             </div>
             <div className="t6-form-group">
-              <p className='t6-label-resp-prof'>CPF:</p>
+              <p className="t6-label-resp-prof">CPF:</p>
               <TextInput
                 type="text"
                 name="cpf"
                 value={formData.cpf}
                 onChange={handleChange}
-                placeholder="XXX.XXX.XXX-XX"
+                placeholder={formData.cpf}
+                disabled={!isEditing}
               />
             </div>
             <div className="t6-form-group">
-              <p className='t6-label-resp-prof'>Senha:</p>
+              <p className="t6-label-resp-prof">Senha:</p>
               <TextInput
                 type="password"
                 name="senha"
                 value={formData.senha}
                 onChange={handleChange}
                 placeholder="******"
+                disabled={!isEditing}
               />
             </div>
           </div>
         </div>
-      </form>
-      <div className='t6-end-resp-prof'>
-        <div className="t6-back-link">
-          <a href="/homeResponsable" className='t6-a'>Voltar para Home?</a>
+
+        <div className="t6-end-resp-prof">
+          <div className="t6-back-link">
+            <a href="/homeResponsable" className="t6-a">
+              Voltar para Home?
+            </a>
+          </div>
+          <button type="submit" className="t6-button" disabled={!isEditing}>
+            Salvar
+          </button>
         </div>
-        <button type="submit" className='t6-button'>Salvar</button>
-      </div>
+      </form>
     </div>
   );
 };

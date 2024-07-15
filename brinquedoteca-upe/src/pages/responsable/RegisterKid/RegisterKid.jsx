@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "./RegisterKid.css";
 import { Input, Button, DatePicker, message } from "antd";
-import brinquedotecaLogo from "../../../assets/Brinquedoteca.png";
-import upeLogo from "../../../assets/Logoupe.png";
 import { addChild } from "../../../services/kid-registration";
 import TopBar from "../../../components/TopBar/TopBar";
 import { useNavigate } from "react-router-dom";
@@ -91,142 +89,154 @@ const RegisterKid = () => {
   };
 
   return (
-    <div className="t7-container">
+    <div className="t4-container">
       <TopBar />
-      <div className="t7-title-box">
-        <h2 className="t7-title">Cadastrar criança</h2>
+      <div className="t4-title-box">
+        <h2 className="t4-title">Cadastrar criança</h2>
       </div>
       <div>
-        <div className="t7-form-group">
-          <p className="t7-label">Nome completo:</p>
+        <div className="t4-form-group">
+          <p className="t4-label">Nome completo:</p>
           <Input
             type="text"
             placeholder="Digite o nome completo..."
             name="name"
+            className="t1-login-input"
             value={formData.name}
             onChange={handleChange}
           />
         </div>
-        <div className="t7-form-group">
-          <p className="t7-label">Sobrenome:</p>
+        <div className="t4-form-group">
+          <p className="t4-label">Sobrenome:</p>
           <Input
             type="text"
             placeholder="Digite o sobrenome..."
             name="lastName"
+            className="t1-login-input"
             value={formData.lastName}
             onChange={handleChange}
           />
         </div>
-        <div className="t7-form-group">
-          <p className="t7-label">CEP:</p>
+        <div className="t4-form-group">
+          <p className="t4-label">CEP:</p>
           <Input
             type="text"
             placeholder="Digite o CEP..."
             name="cep"
+            className="t1-login-input"
             value={formData.address.cep}
             onChange={handleChange}
           />
         </div>
-        <div className="t7-form-group">
-          <p className="t7-label">Rua:</p>
+        <div className="t4-form-group">
+          <p className="t4-label">Rua:</p>
           <Input
             type="text"
             placeholder="Digite a rua..."
+            className="t1-login-input"
             name="street"
             value={formData.address.street}
             onChange={handleChange}
           />
         </div>
-        <div className="t7-form-group">
-          <p className="t7-label">Número:</p>
+        <div className="t4-form-group">
+          <p className="t4-label">Número:</p>
           <Input
             type="text"
+            className="t1-login-input"
             placeholder="Digite o número..."
             name="number"
             value={formData.address.number}
             onChange={handleChange}
           />
         </div>
-        <div className="t7-form-group">
-          <p className="t7-label">Bairro:</p>
+        <div className="t4-form-group">
+          <p className="t4-label">Bairro:</p>
           <Input
             type="text"
+            className="t1-login-input"
             placeholder="Digite o bairro..."
             name="district"
             value={formData.address.district}
             onChange={handleChange}
           />
         </div>
-        <div className="t7-form-group">
-          <p className="t7-label">Cidade:</p>
+        <div className="t4-form-group">
+          <p className="t4-label">Cidade:</p>
           <Input
             type="text"
             placeholder="Digite a cidade..."
             name="city"
+            className="t1-login-input"
             value={formData.address.city}
             onChange={handleChange}
           />
         </div>
-        <div className="t7-form-group">
-          <p className="t7-label">Estado:</p>
+        <div className="t4-form-group">
+          <p className="t4-label">Estado:</p>
           <Input
             type="text"
             placeholder="Digite o estado..."
+            className="t1-login-input"
             name="state"
             value={formData.address.state}
             onChange={handleChange}
           />
         </div>
-        <div className="t7-form-group">
-          <p className="t7-label">Complemento:</p>
+        <div className="t4-form-group">
+          <p className="t4-label">Complemento:</p>
           <Input
             type="text"
             placeholder="Digite o complemento..."
+            className="t1-login-input"
             name="supplement"
             value={formData.address.supplement}
             onChange={handleChange}
           />
         </div>
-        <div className="t7-form-group">
-          <p className="t7-label">Data de nascimento:</p>
+        <div className="t4-form-group">
+          <p className="t4-label">Data de nascimento:</p>
           <DatePicker
             placeholder="Selecione a data"
+            className="t1-login-input"
             onChange={handleBirthdayChange}
           />
         </div>
-        <div className="t7-form-group">
-          <p className="t7-label">Observações:</p>
+        <div className="t4-form-group">
+          <p className="t4-label">Observações:</p>
           <Input.TextArea
             placeholder="Alergias, medos, etc..."
             name="observations"
+            className="t1-login-input"
             value={formData.observations}
             onChange={handleChange}
           />
         </div>
-        <div className="t7-form-group">
-          <p className="t7-label">Descrição:</p>
+        <div className="t4-form-group">
+          <p className="t4-label">Descrição:</p>
           <Input.TextArea
             placeholder="Descrição..."
+            className="t1-login-input"
             name="description"
             value={formData.description}
             onChange={handleChange}
           />
         </div>
-        <div className="t7-buttons-box">
+        <div className="t4-buttons-box">
           <p>
-            <a href="/homeResponsable" className="t7-a">
+            <a href="/homeResponsable" className="t4-a">
               Voltar para Home?
             </a>
           </p>
           <Button
             type="primary"
-            className="t7-button"
+            className="t4-button"
             onClick={handleRegisterChild}
           >
             Cadastrar
           </Button>
         </div>
-        {error && <p className="t7-error-text">{error}</p>}
+        {error && <p className="t4-error-text">{error}</p>}
       </div>
     </div>
   );

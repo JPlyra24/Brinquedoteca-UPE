@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./YourKids.css";
 import Kid from "./Kid/Kid";
 import { FaPlus } from "react-icons/fa";
-import { Button } from "antd";
+import { Button, Empty } from "antd";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
 
@@ -38,9 +38,13 @@ const YourKids = () => {
         </Button>
       </div>
       <div className="t3-1-kids">
-        {children.map((child) => (
-          <Kid key={child.id} child={child} />
-        ))}
+        {children.length > 0 ? (
+          children.map((child) => (
+            <Kid key={child.id} child={child} />
+          ))
+        ) : (
+          <Empty description="Nenhuma criança registrada" />
+        )}
       </div>
     </div>
   );
